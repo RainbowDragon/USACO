@@ -8,19 +8,14 @@ cows = list(map(int, input().split()))
 haybales = map(int, input().split())
  
 for h in haybales:
-	if h <= cows[0]:
-		cows[0] += h
-	else:
-		h_low = 0
-		for i in range(N):
-			if h_low < cows[i]:
-				h_next = min(cows[i], h)
-				cows[i] += h_next - h_low
-				h_low = h_next
+	h_low = 0
+	for i in range(N):
+		if h_low < cows[i]:
+			h_next = min(cows[i], h)
+			cows[i] += h_next - h_low
+			h_low = h_next
 
-				if h_low == h:
-					break
+			if h_low == h:
+				break
 
-
-for c in cows:
-	print(c)
+print(*cows, sep="\n")
