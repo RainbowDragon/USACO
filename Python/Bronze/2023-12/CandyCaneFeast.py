@@ -5,17 +5,19 @@
 N, M = map(int, input().split())
 
 cows = list(map(int, input().split()))
-haybales = map(int, input().split())
+canes = map(int, input().split())
  
-for h in haybales:
+for cane in canes:
 	h_low = 0
 	for i in range(N):
-		if h_low < cows[i]:
-			h_next = min(cows[i], h)
+		cow = cows[i]
+		if h_low < cow:
+			h_next = min(cow, cane)
 			cows[i] += h_next - h_low
 			h_low = h_next
 
-			if h_low == h:
+			if h_low == cane:
 				break
 
-print(*cows, sep="\n")
+for cow in cows:
+	print(cow)
