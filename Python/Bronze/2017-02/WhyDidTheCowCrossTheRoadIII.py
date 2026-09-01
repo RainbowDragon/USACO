@@ -8,9 +8,7 @@ sys.stdout = open('cowqueue.out', 'w')
 
 N = int(input())
 
-cows = [tuple(map(int, input().split())) for _ in range(N)]
-
-cows.sort()
+cows = sorted(tuple(map(int, input().split())) for _ in range(N))
 
 cur_time = 0
 for arr, dur in cows:
