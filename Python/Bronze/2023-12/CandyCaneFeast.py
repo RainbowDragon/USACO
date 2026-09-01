@@ -16,7 +16,7 @@ for cane in canes:
 			cows[i] += h_next - h_low
 			h_low = h_next
 
-			if h_low == cane:
+			if h_low >= cane:
 				break
 
 for cow in cows:
