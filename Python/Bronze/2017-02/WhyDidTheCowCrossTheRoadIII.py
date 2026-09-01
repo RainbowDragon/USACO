@@ -7,19 +7,13 @@ sys.stdin = open('cowqueue.in', 'r')
 sys.stdout = open('cowqueue.out', 'w')
 
 N = int(input())
-cows = []
 
-for _ in range(N):
-	arr, dur = map(int, input().split())
-	cows.append((arr, dur))
+cows = [tuple(map(int, input().split())) for _ in range(N)]
 
 cows.sort()
 
 cur_time = 0
 for arr, dur in cows:
-	if cur_time < arr:
-		cur_time = arr
-	
-	cur_time += dur
+	cur_time = max(cur_time, arr) + dur
 
 print(cur_time)
