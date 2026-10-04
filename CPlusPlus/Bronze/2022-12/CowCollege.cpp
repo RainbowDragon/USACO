@@ -19,21 +19,21 @@ int main()
 
     sort(cows.begin(), cows.end());
 
-    long long maxRev = 0;
-    long long bestTui = 0;
+    long long max_rev = 0;
+    long long best_tui = 0;
 
     for (int i = 0; i < N; i++)
     {
-        long long numCows = N - i;
-        long long rev = cows[i] * numCows;
+        long long num_cows = N - i;
+        long long rev = cows[i] * num_cows;
 
-        if (rev > maxRev) {
-            maxRev = rev;
-            bestTui = cows[i];
+        if (rev > max_rev) {
+            max_rev = rev;
+            best_tui = cows[i];
         }
     }
 
-    cout << maxRev << " " << bestTui << endl;
+    cout << max_rev << " " << best_tui << endl;
 
     return 0;
 }
