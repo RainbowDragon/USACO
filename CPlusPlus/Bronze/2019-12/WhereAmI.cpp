@@ -19,17 +19,17 @@ int main()
 
     for (int K = 1; K <= N; K++)
     {
-        unordered_set<string> substrSet;
+        unordered_set<string> substr_set;
         bool unique = true;
 
         for (int i = 0; i <= N-K; i++)
         {
             string substr = str.substr(i, K);
-            if (substrSet.count(substr)) {
+            if (substr_set.count(substr)) {
                 unique = false;
                 break;
             }
-            substrSet.insert(substr);
+            substr_set.insert(substr);
         }
 
         if (unique) {
