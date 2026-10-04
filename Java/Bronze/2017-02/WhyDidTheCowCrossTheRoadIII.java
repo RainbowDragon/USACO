@@ -26,7 +26,7 @@ public class WhyDidTheCowCrossTheRoadIII {
             cows[i][1] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(cows, Comparator.comparingInt((int[] a) -> a[0]).thenComparingInt(a -> a[1]));
+        Arrays.sort(cows, Comparator.comparingInt((int[] a) -> a[0]));
 
         int curTime = 0;
 
