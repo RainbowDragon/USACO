@@ -7,12 +7,12 @@ import itertools
 sys.stdin = open('lineup.in', 'r')
 sys.stdout = open('lineup.out', 'w')
 
-Cows = sorted([
-    "Bessie", "Buttercup", "Belinda", "Beatrice", 
-    "Bella", "Blue", "Betsy", "Sue"
-])
-
 N = int(input())
+
+Cows = [
+	"Beatrice", "Belinda", "Bella", "Bessie", 
+	"Betsy", "Blue", "Buttercup", "Sue"
+]
 
 constraints = []
 for _ in range(N):
