@@ -8,6 +8,20 @@ import java.util.*;
 
 public class WhyDidTheCowCrossTheRoadIII {
 
+    static class Cow implements Comparable<Cow> {
+        int arrTime, duration;
+
+        Cow(int arrTime, int duration) {
+            this.arrTime = arrTime;
+            this.duration = duration;
+        }
+
+        @Override
+        public int compareTo(Cow other) {
+            return Integer.compare(this.arrTime, other.arrTime);
+        }        
+    }
+
     public static void main (String [] args) throws IOException {
 
         // Input:
@@ -17,22 +31,23 @@ public class WhyDidTheCowCrossTheRoadIII {
 
         int N = Integer.parseInt(in.readLine());
 
-        int[][] cows = new int[N][2];
+        Cow[] cows = new Cow[N];
 
         for (int i = 0; i < N; i++)
         {
             StringTokenizer st = new StringTokenizer(in.readLine());
-            cows[i][0] = Integer.parseInt(st.nextToken());
-            cows[i][1] = Integer.parseInt(st.nextToken());
+            int arrTime = Integer.parseInt(st.nextToken());
+            int duration = Integer.parseInt(st.nextToken());
+            cows[i] = new Cow(arrTime, duration);
         }
 
-        Arrays.sort(cows, Comparator.comparingInt((int[] a) -> a[0]));
+        Arrays.sort(cows);
 
         int curTime = 0;
 
-        for (int i = 0; i < N; i++)
+        for (Cow cow : cows)
         {
-            curTime = Math.max(curTime, cows[i][0]) + cows[i][1];
+            curTime = Math.max(curTime, cow.arrTime) + cow.duration;
         }
 
         out.println(curTime);
