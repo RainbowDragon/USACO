@@ -16,27 +16,27 @@ for _ in range(M):
 
 min_cost = float('inf')
 
-for i in range(1 << M):
+for mask in range(1 << M):
 	cur_cost = 0
 	stall_cooling = [0] * 101
 
-	for j in range(M):
-		if (i >> j) & 1:
-			a, b, p, m = acs[j]
+	for i in range(M):
+		if (mask >> i) & 1:
+			a, b, p, m = acs[i]
 			cur_cost += m
 			for stall in range(a, b+1):
 				stall_cooling[stall] += p
 	
-	satisfied = True
+	valid = True
 	for s, t, c in cows:
 		for stall in range(s, t+1):
 			if stall_cooling[stall] < c:
-				satisfied = False
+				valid = False
 				break
-		if not satisfied:
+		if not valid:
 			break
 	
-	if satisfied:
+	if valid:
 		min_cost =  min(min_cost, cur_cost)
 
 print(min_cost)
