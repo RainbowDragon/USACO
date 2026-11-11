@@ -23,11 +23,11 @@ for _ in range(N):
 graph = [[] for _ in range(N)]
 for i in range(N):
 	x1, y1, p1 = cows[i]
-	p1_sq = p1 ** 2
+	p1_sq = p1 * p1
 	for j in range(N):
 		if i != j:
 			x2, y2, p2 = cows[j]
-			if (x1 - x2) ** 2 + (y1 - y2) ** 2 <= p1_sq:
+			if (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2) <= p1_sq:
 				graph[i].append(j)
 
 max_reached = 0
