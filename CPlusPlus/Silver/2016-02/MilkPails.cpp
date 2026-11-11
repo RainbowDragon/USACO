@@ -30,7 +30,8 @@ int main()
             continue;
         }
 
-        pair<int, int> next_states[] = {
+        pair<int, int> next_states[] = 
+        {
             {X, b},
             {a, Y},
             {0, b},
