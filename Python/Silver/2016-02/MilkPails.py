@@ -1,5 +1,5 @@
 #
-#  USACO 2016 February - Silver - Problem 1 - Milk Pails
+#  USACO 2016 February - Silver - Problem 3 - Milk Pails
 #
 import sys
 from collections import deque
