@@ -10,7 +10,7 @@ sys.stdout = open('pails.out', 'w')
 X, Y, K, M = map(int, input().split())
 
 queue = deque([(0, 0, 0)])
-visited = set([(0, 0, 0)])
+visited = set([(0, 0)])
 
 min_diff = M
 
@@ -32,9 +32,10 @@ while queue:
 	]
 
 	for na, nb in next_states:
-		next_state = (na, nb, step + 1)
+		next_state = (na, nb)
+		next_node = (na, nb, step + 1)
 		if next_state not in visited:
 			visited.add(next_state)
-			queue.append(next_state)
+			queue.append(next_node)
 
 print(min_diff)
