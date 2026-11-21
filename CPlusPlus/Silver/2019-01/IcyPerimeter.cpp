@@ -37,14 +37,14 @@ int main()
                 s.push({r, c});
                 visited[r][c] = true;
 
-                int cur_area = 0;
-                int cur_perimeter = 0;
+                int curr_area = 0;
+                int curr_perimeter = 0;
 
                 while (!s.empty())
                 {
                     auto [cr, cc] = s.top();
                     s.pop();
-                    cur_area++;
+                    curr_area++;
 
                     for (int i = 0; i < 4; i++)
                     {
@@ -52,7 +52,7 @@ int main()
                         int nc = cc + dc[i];
 
                         if (nr < 0 || nr >= N or nc < 0 or nc >= N || grid[nr][nc] == '.') {
-                            cur_perimeter++;
+                            curr_perimeter++;
                         }
                         else if (!visited[nr][nc]) {
                             visited[nr][nc] = true;
@@ -62,12 +62,12 @@ int main()
                     }
                 }
 
-                if (cur_area > best_area) {
-                    best_area = cur_area;
-                    best_perimeter = cur_perimeter;
+                if (curr_area > best_area) {
+                    best_area = curr_area;
+                    best_perimeter = curr_perimeter;
                 }
-                else if (cur_area == best_area && cur_perimeter < best_perimeter) {
-                    best_perimeter = cur_perimeter;
+                else if (curr_area == best_area && curr_perimeter < best_perimeter) {
+                    best_perimeter = curr_perimeter;
                 }
             }
         }
