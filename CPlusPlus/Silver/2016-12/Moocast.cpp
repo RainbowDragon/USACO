@@ -6,17 +6,19 @@
 
 using namespace std;
 
+typedef long long ll;
+
 struct Cow 
 {
-    long long x, y, p;
+    ll x, y, p;
 };
 
 bool can_reach(const Cow& a, const Cow& b) 
 {
-    long long dx = a.x - b.x;
-    long long dy = a.y - b.y;
-    long long dist_sq = dx * dx + dy * dy;
-    long long power_sq = a.p * a.p;
+    ll dx = a.x - b.x;
+    ll dy = a.y - b.y;
+    ll dist_sq = dx * dx + dy * dy;
+    ll power_sq = a.p * a.p;
     return dist_sq <= power_sq;
 }
 
