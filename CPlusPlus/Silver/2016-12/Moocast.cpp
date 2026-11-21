@@ -11,7 +11,7 @@ struct Cow
     long long x, y, p;
 };
 
-bool canReach(const Cow& a, const Cow& b) 
+bool can_reach(const Cow& a, const Cow& b) 
 {
     long long dx = a.x - b.x;
     long long dy = a.y - b.y;
@@ -53,7 +53,7 @@ int main()
     for (int i = 0; i < N; i++)
         for (int j = 0; j < N; j++) 
         {
-            if (i != j && canReach(cows[i], cows[j])) {
+            if (i != j && can_reach(cows[i], cows[j])) {
                 graph[i].push_back(j);
             }
         }
