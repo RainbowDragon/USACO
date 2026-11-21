@@ -35,13 +35,13 @@ int main()
 
     for (int mask = 0; mask < (1 << M); mask++)
     {
-        int cur_cost = 0;
+        int curr_cost = 0;
         vector<int> stall_cooling(101, 0);
 
         for (int i = 0; i < M; i++)
         {
             if ((mask >> i) & 1) {
-                cur_cost += acs[i].m;
+                curr_cost += acs[i].m;
                 for (int stall = acs[i].a; stall <= acs[i].b; stall++)
                 {
                     stall_cooling[stall] += acs[i].p;
@@ -66,7 +66,7 @@ int main()
         }
 
         if (valid) {
-            min_cost = min(min_cost, cur_cost);
+            min_cost = min(min_cost, curr_cost);
         }
     }
 
