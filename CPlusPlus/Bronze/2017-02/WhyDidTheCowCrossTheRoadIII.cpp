@@ -22,14 +22,14 @@ int main()
 
     sort(cows.begin(), cows.end());
 
-    int cur_time = 0;
+    int curr_time = 0;
 
     for (int i = 0; i < N; i++)
     {
-        cur_time = max(cur_time, cows[i].first) + cows[i].second;
+        curr_time = max(curr_time, cows[i].first) + cows[i].second;
     }
 
-    cout << cur_time << endl;
+    cout << curr_time << endl;
 
     return 0;
 }
