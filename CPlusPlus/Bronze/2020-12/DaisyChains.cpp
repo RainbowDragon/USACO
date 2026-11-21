@@ -21,15 +21,15 @@ int main()
 
     for (int i = 0; i < N; i++)
     {
-        int cur_sum = 0;
+        int curr_sum = 0;
         unordered_set<int> seen;
         for (int j = i; j < N; j++)
         {
-            cur_sum += pedals[j];
+            curr_sum += pedals[j];
             seen.insert(pedals[j]);
 
             int length = j - i + 1;
-            if (cur_sum % length == 0 && seen.count(cur_sum / length)) {
+            if (curr_sum % length == 0 && seen.count(curr_sum / length)) {
                 count++;
             }
         }
