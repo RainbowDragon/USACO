@@ -34,9 +34,9 @@ public class MilkPails {
 
         while (!queue.isEmpty()) 
         {
-            int current = queue.poll();
-            int a = current / 101;
-            int b = current % 101;
+            int curr = queue.poll();
+            int a = curr / 101;
+            int b = curr % 101;
             int d = state[a][b];
 
             if (d == K) {
