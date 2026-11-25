@@ -10,8 +10,8 @@ N = int(input())
 
 cows = sorted(tuple(map(int, input().split())) for _ in range(N))
 
-cur_time = 0
+curr_time = 0
 for arr, dur in cows:
-	cur_time = max(cur_time, arr) + dur
+	curr_time = max(curr_time, arr) + dur
 
-print(cur_time)
+print(curr_time)
