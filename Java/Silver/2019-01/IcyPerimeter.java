@@ -40,15 +40,15 @@ public class IcyPerimeter {
                     s.push(r*N + c);
                     visited[r][c] = true;
 
-                    int curArea = 0;
-                    int curPerimeter = 0;
+                    int currArea = 0;
+                    int currPerimeter = 0;
 
                     while (!s.isEmpty())
                     {
                         int current = s.pop();
                         int cr = current / N;
                         int cc = current % N;
-                        curArea++;
+                        currArea++;
 
                         for (int i = 0; i < 4; i++)
                         {
@@ -56,7 +56,7 @@ public class IcyPerimeter {
                             int nc = cc + dc[i];
 
                             if (nr < 0 || nr >= N || nc < 0 || nc >= N || grid[nr][nc] == '.') {
-                                curPerimeter++;
+                                currPerimeter++;
                             }
                             else if (!visited[nr][nc]) {
                                 visited[nr][nc] = true;
@@ -65,12 +65,12 @@ public class IcyPerimeter {
                         }
                     }
 
-                    if (curArea > bestArea) {
-                        bestArea = curArea;
-                        bestPerimeter = curPerimeter;
+                    if (currArea > bestArea) {
+                        bestArea = currArea;
+                        bestPerimeter = currPerimeter;
                     }
-                    else if (curArea == bestArea && curPerimeter < bestPerimeter) {
-                        bestPerimeter = curPerimeter;
+                    else if (currArea == bestArea && currPerimeter < bestPerimeter) {
+                        bestPerimeter = currPerimeter;
                     }
                 }
             }
