@@ -27,16 +27,16 @@ public class DaisyChains {
 
         for (int i = 0; i < N; i++)
         {
-            int curSum = 0;
+            int currSum = 0;
             HashSet<Integer> seen = new HashSet<>();
 
             for (int j = i; j < N; j++)
             {
-                curSum += petals[j];
+                currSum += petals[j];
                 seen.add(petals[j]);
 
                 int length = j - i + 1;
-                if (curSum % length == 0 && seen.contains(curSum / length)) {
+                if (currSum % length == 0 && seen.contains(currSum / length)) {
                     count++;
                 }
             }
