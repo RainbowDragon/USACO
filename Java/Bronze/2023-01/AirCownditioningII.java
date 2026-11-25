@@ -61,13 +61,13 @@ public class AirCownditioningII {
 
         for (int mask = 0; mask < (1 << M); mask++)
         {
-            int curCost = 0;
+            int currCost = 0;
             int[] stallCooling = new int[101];
 
             for (int i = 0; i < M; i++)
             {
                 if (((mask >> i) & 1) == 1) {
-                    curCost += acs[i].m;
+                    currCost += acs[i].m;
                     for (int stall = acs[i].a; stall <= acs[i].b; stall++)
                     {
                         stallCooling[stall] += acs[i].p;
@@ -92,7 +92,7 @@ public class AirCownditioningII {
             }
 
             if (valid) {
-                minCost = Math.min(minCost, curCost);
+                minCost = Math.min(minCost, currCost);
             }
         }
 
