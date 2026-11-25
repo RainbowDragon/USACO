@@ -43,14 +43,14 @@ public class WhyDidTheCowCrossTheRoadIII {
 
         Arrays.sort(cows);
 
-        int curTime = 0;
+        int currTime = 0;
 
         for (Cow cow : cows)
         {
-            curTime = Math.max(curTime, cow.arrTime) + cow.duration;
+            currTime = Math.max(currTime, cow.arrTime) + cow.duration;
         }
 
-        out.println(curTime);
+        out.println(currTime);
 
         in.close();
         out.close();
