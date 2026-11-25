@@ -39,27 +39,27 @@ public class LivestockLineup {
             "Betsy", "Blue", "Buttercup", "Sue"
         };
 
-        List<String> current = new ArrayList<>();
+        List<String> curr = new ArrayList<>();
         boolean[] used = new boolean[8];
 
-        backTrack(current, used, cows, constraints, out);
+        backTrack(curr, used, cows, constraints, out);
 
         in.close();
         out.close();
     }
 
-    private static void backTrack(List<String> current, boolean[] used, String[] cows, Constraint[] constraints, PrintWriter out) {
+    private static void backTrack(List<String> curr, boolean[] used, String[] cows, Constraint[] constraints, PrintWriter out) {
 
         if (done) {
             return;
         }
 
-        if (current.size() == 8) {
+        if (curr.size() == 8) {
 
             HashMap<String, Integer> pos = new HashMap<>();
             for (int i = 0; i < 8; i++)
             {
-                pos.put(current.get(i), i);
+                pos.put(curr.get(i), i);
             }
 
             boolean valid = true;
@@ -72,7 +72,7 @@ public class LivestockLineup {
             }
 
             if (valid) {
-                for (String cow : current)
+                for (String cow : curr)
                 {
                     out.println(cow);
                 }
@@ -86,11 +86,11 @@ public class LivestockLineup {
         {
             if (!used[i]) {
                 used[i] = true;
-                current.add(cows[i]);
+                curr.add(cows[i]);
 
-                backTrack(current, used, cows, constraints, out);
+                backTrack(curr, used, cows, constraints, out);
 
-                current.remove(current.size()-1);
+                curr.remove(curr.size()-1);
                 used[i] = false;
             }  
         }
