@@ -26,28 +26,28 @@ for r in range(N):
 
 			visited[r][c] = True
 
-			cur_area = 0
-			cur_perimeter = 0
+			curr_area = 0
+			curr_perimeter = 0
 
 			while stack:
 				cr, cc = stack.pop()
-				cur_area += 1
+				curr_area += 1
 
 				for i in range(4):
 					nr = cr + dr[i]
 					nc = cc + dc[i]
 
 					if nr < 0 or nr >= N or nc < 0 or nc >= N or grid[nr][nc] == '.':
-						cur_perimeter += 1
+						curr_perimeter += 1
 					else:
 						if not visited[nr][nc]:
 							visited[nr][nc] = True
 							stack.append((nr, nc))
 
-			if cur_area > best_area:
-				best_area = cur_area
-				best_perimeter = cur_perimeter
-			elif cur_area == best_area and cur_perimeter < best_perimeter:
-				best_perimeter = cur_perimeter
+			if curr_area > best_area:
+				best_area = curr_area
+				best_perimeter = curr_perimeter
+			elif curr_area == best_area and curr_perimeter < best_perimeter:
+				best_perimeter = curr_perimeter
 
 print(best_area, best_perimeter)
