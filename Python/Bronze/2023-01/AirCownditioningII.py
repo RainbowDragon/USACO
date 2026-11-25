@@ -17,13 +17,13 @@ for _ in range(M):
 min_cost = float('inf')
 
 for mask in range(1 << M):
-	cur_cost = 0
+	curr_cost = 0
 	stall_cooling = [0] * 101
 
 	for i in range(M):
 		if (mask >> i) & 1:
 			a, b, p, m = acs[i]
-			cur_cost += m
+			curr_cost += m
 			for stall in range(a, b+1):
 				stall_cooling[stall] += p
 	
@@ -37,6 +37,6 @@ for mask in range(1 << M):
 			break
 	
 	if valid:
-		min_cost =  min(min_cost, cur_cost)
+		min_cost =  min(min_cost, curr_cost)
 
 print(min_cost)
